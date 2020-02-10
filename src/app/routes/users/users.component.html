@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-6">
+    <div class="list-group">
+      <a class="list-group-item list-group-item-action"
+        *ngFor="let user of users"
+        [routerLink]="[user.id, user.name]"
+        [queryParams]="{allowEdit: user.id === 1 ? '1' : '0'}"
+        [fragment]="'loading'">{{ user.name }}</a>
+    </div>
+  </div>
+  <div class="col-6">
+    <router-outlet></router-outlet>
+  </div>
+</div>
