@@ -11,7 +11,7 @@ import { ServerComponent } from './servers/server/server.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { ServersService } from './servers/servers.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
-import { RoutingModule } from './routes.routing';
+import { RoutesRoutingModule } from './routes.routing';
 import { ServerResolver } from './servers/server/server-resolver.service';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
@@ -31,7 +31,7 @@ import { canDeactivateGuard } from './servers/edit-server/can-deactivate-guard.s
   imports: [
     CommonModule,
     FormsModule,
-    RoutingModule
+    RoutesRoutingModule
   ],
   providers: [ServersService, ServerResolver, AuthService, AuthGuard, canDeactivateGuard]
 })
