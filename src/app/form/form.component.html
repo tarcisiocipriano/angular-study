@@ -1,0 +1,9 @@
+<button class="btn btn-warning mb-3" (click)="onButton()">
+  Switch to
+  <span *ngIf="this.formType === 'template-driven'">Reactive</span>
+  <span *ngIf="this.formType === 'reactive'">Template Driven</span>
+  Form
+</button>
+
+<app-template-driven *ngIf="this.formType === 'template-driven'"></app-template-driven>
+<app-reative *ngIf="this.formType === 'reactive'"></app-reative>
