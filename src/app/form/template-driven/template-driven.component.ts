@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 })
 export class TemplateDrivenComponent {
 
-  @ViewChild('templateDrivenForm', { static: false }) signupForm: NgForm;
+  @ViewChild('templateDrivenForm', { static: false }) templateDrivenForm: NgForm;
 
   genders = ['male', 'female'];
 
@@ -27,7 +27,7 @@ export class TemplateDrivenComponent {
   submitted = false;
 
   setFormValue() {
-    this.signupForm.setValue({
+    this.templateDrivenForm.setValue({
       userData: {
         username: 'Tarcísio Cipriano',
         email: 'contato@tarcisiocipriano.com',
@@ -41,7 +41,7 @@ export class TemplateDrivenComponent {
   }
 
   suggestUserName() {
-    this.signupForm.form.patchValue({
+    this.templateDrivenForm.form.patchValue({
       userData: {
         username: 'Superuser'
       }
@@ -49,8 +49,8 @@ export class TemplateDrivenComponent {
   }
 
   resetForm() {
-    this.signupForm.reset();
-    this.signupForm.form.patchValue({
+    this.templateDrivenForm.reset();
+    this.templateDrivenForm.form.patchValue({
       userQuestion: {
         secretQuestion: this.defaultSecretQuestion
       }
@@ -62,11 +62,11 @@ export class TemplateDrivenComponent {
     this.submitted = true;
 
     this.user = {
-      username: this.signupForm.value.userData.username,
-      email: this.signupForm.value.userData.email,
-      gender: this.signupForm.value.userData.gender,
-      secretQuestion: this.signupForm.value.userQuestion.secretQuestion,
-      secretAnswer: this.signupForm.value.userQuestion.secretAnswer
+      username: this.templateDrivenForm.value.userData.username,
+      email: this.templateDrivenForm.value.userData.email,
+      gender: this.templateDrivenForm.value.userData.gender,
+      secretQuestion: this.templateDrivenForm.value.userQuestion.secretQuestion,
+      secretAnswer: this.templateDrivenForm.value.userQuestion.secretAnswer
     };
 
     this.resetForm();
