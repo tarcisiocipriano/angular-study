@@ -1,7 +1,26 @@
-.container {
-  margin-top: 30px;
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+
+  &:focus {
+    border: none;
+  }
 }
 
-input.ng-invalid.ng-touched {
-  border: 1px solid red;
+.your-data-output {
+  font-weight: 700;
+
+  p {
+    margin-bottom: 8px;
+  }
+
+  span {
+    font-weight: 400;
+  }
+}
+
+.hobbies {
+  &:not(:last-child):after {
+    content: ", ";
+  }
 }
