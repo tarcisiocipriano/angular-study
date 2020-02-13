@@ -11,10 +11,10 @@
 
         <div class="col-5">
           <div class="form-group">
-            <label for="userName">Name</label>
-            <input type="text" id="userName" class="form-control"
-              ngModel name="userName" required #userName="ngModel">
-            <span class="text-danger"*ngIf="!userName.valid && userName.touched">Please enter a name</span>
+            <label for="username">Name</label>
+            <input type="text" id="username" class="form-control"
+              ngModel name="username" required #username="ngModel">
+            <span class="text-danger"*ngIf="!username.valid && username.touched">Please enter a name</span>
           </div>
         </div> <!-- /col 1 -->
         <div class="col-5">
@@ -60,14 +60,14 @@
             <textarea name="secretAnswer" rows="3" class="form-control"
               [(ngModel)]="answer" required #secretAnswer="ngModel"></textarea>
           </div>
-          <span class="text-danger" *ngIf="!secretAnswer.valid && secretAnswer.touched">Please enter a valid email</span>
+          <span class="text-danger" *ngIf="!secretAnswer.valid && secretAnswer.touched">Enter a answer</span>
           <p><b>Two way data binding:</b> {{ answer }}</p>
         </div> <!-- /col 1 -->
         <div class="col-6">
           <h3>Your Data</h3>
           <div class="row">
             <div class="col-12 your-data-output">
-              <p>UserName: <span *ngIf="submitted">{{ user.userName }}</span></p>
+              <p>UserName: <span *ngIf="submitted">{{ user.username }}</span></p>
               <p>Mail: <span *ngIf="submitted">{{ user.email }}</span></p>
               <p>Gender: <span *ngIf="submitted">{{ user.gender }}</span></p>
               <p>SecretQuestion: <span *ngIf="submitted">Your first {{ user.secretQuestion }}</span></p>

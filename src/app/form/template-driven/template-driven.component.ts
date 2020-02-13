@@ -17,7 +17,7 @@ export class TemplateDrivenComponent {
   answer = '';
 
   user = {
-    userName: '',
+    username: '',
     email: '',
     gender: '',
     secretQuestion: '',
@@ -29,7 +29,7 @@ export class TemplateDrivenComponent {
   setFormValue() {
     this.signupForm.setValue({
       userData: {
-        userName: 'Tarcísio Cipriano',
+        username: 'Tarcísio Cipriano',
         email: 'contato@tarcisiocipriano.com',
         gender: 'male'
       },
@@ -43,7 +43,7 @@ export class TemplateDrivenComponent {
   suggestUserName() {
     this.signupForm.form.patchValue({
       userData: {
-        userName: 'Superuser'
+        username: 'Superuser'
       }
     });
   }
@@ -62,7 +62,7 @@ export class TemplateDrivenComponent {
     this.submitted = true;
 
     this.user = {
-      userName: this.signupForm.value.userData.userName,
+      username: this.signupForm.value.userData.username,
       email: this.signupForm.value.userData.email,
       gender: this.signupForm.value.userData.gender,
       secretQuestion: this.signupForm.value.userQuestion.secretQuestion,
