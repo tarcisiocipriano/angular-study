@@ -36,6 +36,7 @@ export class HttpComponent implements OnInit, OnDestroy {
     this.postsCreatedSub = this.postsService.postCreated.subscribe(() => {
       this.onFetchPosts();
       this.postForm.resetForm();
+      this.postsCreatedSub.unsubscribe();
     });
   }
 
@@ -62,7 +63,6 @@ export class HttpComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.errorSub.unsubscribe();
-    this.postsCreatedSub.unsubscribe();
   }
 
 }
