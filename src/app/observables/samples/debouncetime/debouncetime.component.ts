@@ -11,21 +11,20 @@ export class DebouncetimeComponent implements OnInit, OnDestroy {
 
   output: string;
 
-  @ViewChild('input', {static: true}) input: ElementRef;
+  @ViewChild('input', { static: true }) input: ElementRef;
 
   subscription = new Subscription();
 
   ngOnInit() {
     fromEvent(this.input.nativeElement, 'input')
-    .pipe(
-      // map((event: Event) => (<HTMLInputElement>event.target).value),
-      map((event: Event) => (event.target as HTMLInputElement).value),
-      debounceTime(2000),
-      distinctUntilChanged()
-    )
-    .subscribe(
-      data => this.output = data
-    );
+      .pipe(
+        map((event: Event) => (event.target as HTMLInputElement).value),
+        debounceTime(500),
+        distinctUntilChanged()
+      )
+      .subscribe({
+        next: data => this.output = data
+      });
   }
 
   ngOnDestroy(): void {
