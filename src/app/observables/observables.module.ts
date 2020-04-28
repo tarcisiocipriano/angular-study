@@ -22,6 +22,7 @@ import { ObservableComponent } from './samples/observable/observable.component';
     SidebarComponent,
     ObservableComponent,
     SubjectComponent,
+    BehaviorsubjectComponent,
     MapThrottletimeComponent,
     FilterComponent,
     DebouncetimeComponent,
@@ -29,7 +30,6 @@ import { ObservableComponent } from './samples/observable/observable.component';
     ScanReduceComponent,
     MergemapComponent,
     SwitchmapComponent,
-    BehaviorsubjectComponent,
   ],
   imports: [
     CommonModule,

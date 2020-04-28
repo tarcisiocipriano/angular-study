@@ -17,7 +17,9 @@ export class BehaviorsubjectComponent implements OnInit, OnDestroy {
   subscription = new Subscription();
 
   ngOnInit() {
-    this.behaviorSubject.subscribe(value => this.output = value);
+    this.subscription = this.behaviorSubject.subscribe({
+      next: value => this.output = value
+    });
   }
 
   onClick() {

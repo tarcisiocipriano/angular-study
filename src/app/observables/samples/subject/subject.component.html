@@ -6,7 +6,7 @@
       subj = new Subject{{'<'}}string{{'>'}}();
 
       ngOnInit() {{'{'}}
-        this.subscription = this.subj.subscribe({{'{'}}
+        this.subj.subscribe({{'{'}}
           next: data => this.item = data
         {{'}'}});
       {{'}'}}
@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <p>subject() is a special type of Observable that allows values to be multicasted to many Observers. Subjects are like EventEmitters.</p>
+  <p>Subject() is a special type of Observable that allows values to be multicasted to many Observers. Subjects are like EventEmitters.</p>
 </div>
 
 <button (click)="onClick()" class="btn btn-warning mb-3">Say my name</button>
