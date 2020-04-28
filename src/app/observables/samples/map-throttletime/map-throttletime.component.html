@@ -1,3 +1,26 @@
+<div class="jumbotron py-3">
+  <p class="lead">Here a interval observable emit events every second, and stops when reaches 10 seconds.</p>
+
+  <div class="card mb-3 bg-dark text-white">
+    <div class="card-body"><pre class="text-white m-0">
+      interval(1000)
+        .pipe(
+          map(value => `Number: ${{'{'}}value{{'}'}}`),
+          throttleTime(2000)
+        )
+        .subscribe({{'{'}}
+          next: value => this.items.push(value),
+          error: error => console.log(error),
+          complete: () => console.log('completed')
+        {{'}'}});</pre>
+    </div>
+  </div>
+
+  <p>map() transforms the value</p>
+  <p>throttleTime() emits a value, then ignores subsequent values for 2 seconds, then repeats this process.</p>
+
+</div>
+
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let item of output">{{ item }}</li>
+  <li class="list-group-item" *ngFor="let item of items">{{ item }}</li>
 </ul>
