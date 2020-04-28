@@ -8,7 +8,7 @@ import { Subject, Subscription } from 'rxjs';
 })
 export class SubjectComponent implements OnInit, OnDestroy {
 
-  output: string;
+  item: string;
 
   subj = new Subject<string>();
 
@@ -16,12 +16,12 @@ export class SubjectComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subscription = this.subj.subscribe(
-      data => this.output = data
+      data => this.item = data
     );
   }
 
   onClick() {
-    this.subj.next('You\'re dead');
+    this.subj.next('Heisenberg');
   }
 
   ngOnDestroy(): void {

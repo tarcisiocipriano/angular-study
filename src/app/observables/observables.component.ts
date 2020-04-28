@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 
+interface ObservableObj {
+  name: string;
+  route: string;
+}
+
 @Component({
   selector: 'app-observables',
   templateUrl: './observables.component.html',
@@ -7,10 +12,9 @@ import { Component } from '@angular/core';
 })
 export class ObservablesComponent {
 
-  observables: { name: string, route: string }[] = [
-    // { name: 'Observable', route: 'observable' },
+  observables: ObservableObj[] = [
+    { name: 'subject()', route: 'subject' },
     { name: 'map() and throttleTime()', route: 'map-throttletime' },
-    { name: 'Subject()', route: 'subject' },
     { name: 'filter()', route: 'filter' },
     { name: 'debounceTime()', route: 'debouncetime' },
     { name: 'scan() and reduce()', route: 'scan-reduce' },

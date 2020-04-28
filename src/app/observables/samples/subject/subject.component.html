@@ -1,2 +1,25 @@
-<button (click)="onClick()" class="btn btn-danger">Don't click me</button>
-<p>{{ output }}</p>
+<div class="jumbotron py-3">
+  <p class="lead">Here a subject observable emit a text when the button is clicked</p>
+
+  <div class="card mb-3 bg-dark text-white">
+    <div class="card-body"><pre class="text-white m-0">
+      subj = new Subject{{'<'}}string{{'>'}}();
+
+      ngOnInit() {{'{'}}
+        this.subj.subscribe(
+          data => this.item = data
+        );
+      {{'}'}}
+
+      onClick() {{'{'}}
+        this.subj.next('Heisenberg');
+      {{'}'}}</pre>
+    </div>
+  </div>
+
+  <p>subject() is a special type of Observable that allows values to be multicasted to many Observers. Subjects are like EventEmitters.</p>
+
+</div>
+
+<button (click)="onClick()" class="btn btn-warning mb-3">Say my name</button>
+<p>{{ item }}</p>
