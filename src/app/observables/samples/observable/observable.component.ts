@@ -11,17 +11,17 @@ export class ObservableComponent implements OnInit, OnDestroy {
 
   output: string;
 
-  @ViewChild('button', {static: true}) button: ElementRef;
+  @ViewChild('button', { static: true }) button: ElementRef;
 
   subscription: Subscription;
 
   ngOnInit() {
     this.subscription = fromEvent(this.button.nativeElement, 'click')
-    .subscribe({
-      next: (value: MouseEvent) => this.output = value.clientX.toString(),
-      error: error => this.output = error,
-      complete: () => this.output = 'completed'
-    });
+      .subscribe({
+        next: (value: MouseEvent) => this.output = value.clientX.toString(),
+        error: error => this.output = error,
+        complete: () => this.output = 'completed'
+      });
   }
 
   ngOnDestroy(): void {

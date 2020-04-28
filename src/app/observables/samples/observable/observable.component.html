@@ -3,15 +3,15 @@
 
   <div class="card mb-3 bg-dark text-white">
     <div class="card-body"><pre class="text-white m-0">
-      ViewChild('button', {{'{'}}static: true{{'}'}}) button: ElementRef;
+      @ViewChild('button', {{'{'}} static: true {{'}'}}) button: ElementRef;
 
       ngOnInit() {{'{'}}
         fromEvent(this.button.nativeElement, 'click')
-        .subscribe({{'{'}}
-          next: (value: MouseEvent) => this.output = value.clientX.toString(),
-          error: error => this.output = error,
-          complete: () => this.output = 'completed'
-        {{'}'}});
+          .subscribe({{'{'}}
+            next: (value: MouseEvent) => this.output = value.clientX.toString(),
+            error: error => this.output = error,
+            complete: () => this.output = 'completed'
+          {{'}'}});
       {{'}'}}</pre>
     </div>
   </div>
