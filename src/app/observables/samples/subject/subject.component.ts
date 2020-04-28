@@ -15,9 +15,9 @@ export class SubjectComponent implements OnInit, OnDestroy {
   subscription = new Subscription();
 
   ngOnInit() {
-    this.subscription = this.subj.subscribe(
-      data => this.item = data
-    );
+    this.subscription = this.subj.subscribe({
+      next: data => this.item = data
+    });
   }
 
   onClick() {
