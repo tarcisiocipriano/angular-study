@@ -14,20 +14,21 @@ import { BehaviorsubjectComponent } from './samples/behaviorsubject/behaviorsubj
 import { ObservableComponent } from './samples/observable/observable.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'observable', pathMatch: 'full' },
   {
     path: '',
     component: ObservablesComponent,
     children: [
-      {path: 'observable', component: ObservableComponent },
-      {path: 'subject', component: SubjectComponent },
-      {path: 'map-throttletime', component: MapThrottletimeComponent },
-      {path: 'filter', component: FilterComponent },
-      {path: 'debouncetime', component: DebouncetimeComponent },
-      {path: 'scan-reduce', component: ScanReduceComponent },
-      {path: 'pluck', component: PluckComponent },
-      {path: 'mergemap', component: MergemapComponent },
-      {path: 'switchmap', component: SwitchmapComponent },
-      {path: 'behaviorsubject', component: BehaviorsubjectComponent }
+      { path: 'observable', component: ObservableComponent },
+      { path: 'subject', component: SubjectComponent },
+      { path: 'map-throttletime', component: MapThrottletimeComponent },
+      { path: 'filter', component: FilterComponent },
+      { path: 'debouncetime', component: DebouncetimeComponent },
+      { path: 'scan-reduce', component: ScanReduceComponent },
+      { path: 'pluck', component: PluckComponent },
+      { path: 'mergemap', component: MergemapComponent },
+      { path: 'switchmap', component: SwitchmapComponent },
+      { path: 'behaviorsubject', component: BehaviorsubjectComponent }
     ]
   }
 ];
