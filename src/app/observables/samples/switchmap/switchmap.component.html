@@ -1,2 +1,24 @@
-<button class="btn btn-primary" #button>Click me</button>
+<div class="jumbotron py-3">
+  <p class="lead">Here a switchMap operator combines 2 observables.</p>
+
+  <div class="card mb-3 bg-dark text-white">
+    <div class="card-body"><pre class="text-white m-0">
+      @ViewChild('button', {{'{'}} static: true {{'}'}}) button: ElementRef;
+
+      ngOnInit() {{'{'}}
+        const obs1 = fromEvent(this.button.nativeElement, 'click');
+        const obs2 = interval(1000);
+
+        obs1.pipe(switchMap(() => obs2))
+          .subscribe({{'{'}}
+            next: value => this.output = value
+          {{'}'}});
+      {{'}'}}</pre>
+    </div>
+  </div>
+
+  <p>switchMap() projects each source value to an Observable which is merged in the output Observable, emitting values only from the most recently projected Observable.</p>
+</div>
+
+<button class="btn btn-primary mb-3" #button>Click me</button>
 <p>{{ output }}</p>

@@ -11,7 +11,7 @@ export class SwitchmapComponent implements OnInit, OnDestroy {
 
   output: number;
 
-  @ViewChild('button', {static: true}) button: ElementRef;
+  @ViewChild('button', { static: true }) button: ElementRef;
 
   subscription = new Subscription();
 
@@ -19,19 +19,10 @@ export class SwitchmapComponent implements OnInit, OnDestroy {
     const obs1 = fromEvent(this.button.nativeElement, 'click');
     const obs2 = interval(1000);
 
-    // obs1.subscribe(
-    //   () => obs2.subscribe(
-    //     value => this.output = value
-    //   )
-    // );
-
-    this.subscription = obs1.pipe(
-      switchMap(
-        () => {
-          return obs2;
-        }
-      )
-    ).subscribe(value => this.output = value);
+    this.subscription = obs1.pipe(switchMap(() => obs2))
+      .subscribe({
+        next: value => this.output = value
+      });
   }
 
   ngOnDestroy(): void {
