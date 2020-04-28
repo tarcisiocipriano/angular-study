@@ -14,14 +14,15 @@ import { PluckComponent } from './samples/pluck/pluck.component';
 import { MergemapComponent } from './samples/mergemap/mergemap.component';
 import { SwitchmapComponent } from './samples/switchmap/switchmap.component';
 import { BehaviorsubjectComponent } from './samples/behaviorsubject/behaviorsubject.component';
+import { ObservableComponent } from './samples/observable/observable.component';
 
 @NgModule({
   declarations: [
     ObservablesComponent,
     SidebarComponent,
-    MapThrottletimeComponent,
-    MapThrottletimeComponent,
+    ObservableComponent,
     SubjectComponent,
+    MapThrottletimeComponent,
     FilterComponent,
     DebouncetimeComponent,
     ScanReduceComponent,

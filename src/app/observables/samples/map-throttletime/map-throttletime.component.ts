@@ -20,9 +20,7 @@ export class MapThrottletimeComponent implements OnInit, OnDestroy {
         throttleTime(2000)
       )
       .subscribe({
-        next: value => this.items.push(value),
-        error: error => console.log(error),
-        complete: () => console.log('completed')
+        next: value => this.items.push(value)
       });
 
     setTimeout(() => {
@@ -33,4 +31,5 @@ export class MapThrottletimeComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
+
 }

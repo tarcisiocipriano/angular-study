@@ -13,6 +13,7 @@ interface ObservableObj {
 export class ObservablesComponent {
 
   observables: ObservableObj[] = [
+    { name: 'observable', route: 'observable' },
     { name: 'subject()', route: 'subject' },
     { name: 'map() and throttleTime()', route: 'map-throttletime' },
     { name: 'filter()', route: 'filter' },

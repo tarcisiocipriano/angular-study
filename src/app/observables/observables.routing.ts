@@ -11,14 +11,16 @@ import { PluckComponent } from './samples/pluck/pluck.component';
 import { MergemapComponent } from './samples/mergemap/mergemap.component';
 import { SwitchmapComponent } from './samples/switchmap/switchmap.component';
 import { BehaviorsubjectComponent } from './samples/behaviorsubject/behaviorsubject.component';
+import { ObservableComponent } from './samples/observable/observable.component';
 
 const routes: Routes = [
   {
     path: '',
     component: ObservablesComponent,
     children: [
-      {path: 'map-throttletime', component: MapThrottletimeComponent },
+      {path: 'observable', component: ObservableComponent },
       {path: 'subject', component: SubjectComponent },
+      {path: 'map-throttletime', component: MapThrottletimeComponent },
       {path: 'filter', component: FilterComponent },
       {path: 'debouncetime', component: DebouncetimeComponent },
       {path: 'scan-reduce', component: ScanReduceComponent },

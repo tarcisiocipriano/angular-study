@@ -15,19 +15,13 @@ export class ObservableComponent implements OnInit, OnDestroy {
 
   subscription: Subscription;
 
-  observer = {
-    next: (value: string) => this.output = value,
-    error: (error: string) => this.output = error,
-    complete: () => this.output = 'completed'
-  };
-
   ngOnInit() {
     this.subscription = fromEvent(this.button.nativeElement, 'click')
-    .pipe(
-      throttleTime(1000),
-      map((event: MouseEvent) => event.clientX.toString())
-    )
-    .subscribe(this.observer);
+    .subscribe({
+      next: (value: MouseEvent) => this.output = value.clientX.toString(),
+      error: error => this.output = error,
+      complete: () => this.output = 'completed'
+    });
   }
 
   ngOnDestroy(): void {

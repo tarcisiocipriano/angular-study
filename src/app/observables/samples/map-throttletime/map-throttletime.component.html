@@ -9,16 +9,13 @@
           throttleTime(2000)
         )
         .subscribe({{'{'}}
-          next: value => this.items.push(value),
-          error: error => console.log(error),
-          complete: () => console.log('completed')
+          next: value => this.items.push(value)
         {{'}'}});</pre>
     </div>
   </div>
 
-  <p>map() transforms the value</p>
+  <p>map() transforms the value.</p>
   <p>throttleTime() emits a value, then ignores subsequent values for 2 seconds, then repeats this process.</p>
-
 </div>
 
 <ul class="list-group">
