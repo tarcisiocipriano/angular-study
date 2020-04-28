@@ -3,10 +3,25 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/routes/home', pathMatch: 'full' },
-  { path: 'routes', loadChildren: () => import('./routes/routes.module').then(m => m.RoutesModule) },
-  { path: 'form', loadChildren: () => import('./form/form.module').then(m => m.FormModule) },
-  { path: 'http', loadChildren: () => import('./http/http.module').then(m => m.HttpModule) }
+  {
+    path: '', redirectTo: '/routes/home',
+    pathMatch: 'full' },
+  {
+    path: 'routes',
+    loadChildren: () => import('./routes/routes.module').then(m => m.RoutesModule)
+  },
+  {
+    path: 'form',
+    loadChildren: () => import('./form/form.module').then(m => m.FormModule)
+  },
+  {
+    path: 'http',
+    loadChildren: () => import('./http/http.module').then(m => m.HttpModule)
+  },
+  {
+    path: 'observables',
+    loadChildren: () => import('./observables/observables.module').then(m => m.ObservablesModule)
+  }
 ];
 
 @NgModule({

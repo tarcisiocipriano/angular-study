@@ -1,0 +1,24 @@
+<div class="jumbotron py-3">
+  <p class="lead">Here a behaviorSubject observable emit a text when the button is clicked.</p>
+
+  <div class="card mb-3 bg-dark text-white">
+    <div class="card-body"><pre class="text-white m-0">
+      behaviorSubject = new BehaviorSubject('Not clicked yet');
+
+      ngOnInit() {{'{'}}
+        this.subscription = this.behaviorSubject.subscribe({{'{'}}
+          next: value => this.output = value
+        {{'}'}});
+      {{'}'}}
+
+      onClick() {{'{'}}
+        this.behaviorSubject.next('Clicked');
+      {{'}'}}</pre>
+    </div>
+  </div>
+
+  <p>BehaviorSubject() A variant of Subject that requires an initial value and emits its current value whenever it is subscribed to.</p>
+</div>
+
+<button (click)="onClick()" class="btn btn-info mb-3">Don't click me</button>
+<p>{{ output }}</p>
