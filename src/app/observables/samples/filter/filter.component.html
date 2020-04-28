@@ -1,3 +1,21 @@
+<div class="jumbotron py-3">
+  <p class="lead">Here a interval observable emit events every second, and stops when reaches 10 seconds.</p>
+
+  <div class="card mb-3 bg-dark text-white">
+    <div class="card-body"><pre class="text-white m-0">
+      this.subscription = interval(1000)
+        .pipe(
+          filter(value => value % 2 === 0, this)
+        )
+        .subscribe({{'{'}}
+          next: value => this.items.push(value)
+        {{'}'}});</pre>
+    </div>
+  </div>
+
+  <p>filter() filter items by the specified predicate.</p>
+</div>
+
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let number of numbers">{{ number }}</li>
+  <li class="list-group-item" *ngFor="let number of items">{{ number }}</li>
 </ul>

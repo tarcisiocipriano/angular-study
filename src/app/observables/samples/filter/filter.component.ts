@@ -9,7 +9,7 @@ import { filter } from 'rxjs/operators';
 })
 export class FilterComponent implements OnInit, OnDestroy {
 
-  numbers: number[] = [];
+  items: number[] = [];
 
   subscription = new Subscription();
 
@@ -18,10 +18,13 @@ export class FilterComponent implements OnInit, OnDestroy {
       .pipe(
         filter(value => value % 2 === 0, this)
       )
-      .subscribe(
-        value => this.numbers.push(value),
-        error => console.log(error)
-      );
+      .subscribe({
+        next: value => this.items.push(value)
+      });
+
+    setTimeout(() => {
+      this.subscription.unsubscribe();
+    }, 10000);
   }
 
   ngOnDestroy(): void {
