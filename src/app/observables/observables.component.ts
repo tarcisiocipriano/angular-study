@@ -18,8 +18,8 @@ export class ObservablesComponent {
     { name: 'map() and throttleTime()', route: 'map-throttletime' },
     { name: 'filter()', route: 'filter' },
     { name: 'debounceTime()', route: 'debouncetime' },
-    { name: 'scan() and reduce()', route: 'scan-reduce' },
     { name: 'pluck()', route: 'pluck' },
+    { name: 'scan() and reduce()', route: 'scan-reduce' },
     { name: 'mergeMap()', route: 'mergemap' },
     { name: 'switchMap()', route: 'switchmap' },
     { name: 'behaviorSubject()', route: 'behaviorsubject' }

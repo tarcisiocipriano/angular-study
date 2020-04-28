@@ -9,8 +9,8 @@ import { MapThrottletimeComponent } from './samples/map-throttletime/map-throttl
 import { SubjectComponent } from './samples/subject/subject.component';
 import { FilterComponent } from './samples/filter/filter.component';
 import { DebouncetimeComponent } from './samples/debouncetime/debouncetime.component';
-import { ScanReduceComponent } from './samples/scan-reduce/scan-reduce.component';
 import { PluckComponent } from './samples/pluck/pluck.component';
+import { ScanReduceComponent } from './samples/scan-reduce/scan-reduce.component';
 import { MergemapComponent } from './samples/mergemap/mergemap.component';
 import { SwitchmapComponent } from './samples/switchmap/switchmap.component';
 import { BehaviorsubjectComponent } from './samples/behaviorsubject/behaviorsubject.component';
@@ -25,8 +25,8 @@ import { ObservableComponent } from './samples/observable/observable.component';
     MapThrottletimeComponent,
     FilterComponent,
     DebouncetimeComponent,
-    ScanReduceComponent,
     PluckComponent,
+    ScanReduceComponent,
     MergemapComponent,
     SwitchmapComponent,
     BehaviorsubjectComponent,

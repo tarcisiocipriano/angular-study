@@ -11,7 +11,7 @@ export class PluckComponent implements OnInit, OnDestroy {
 
   output: string;
 
-  @ViewChild('input', {static: true}) input: ElementRef;
+  @ViewChild('input', { static: true }) input: ElementRef;
 
   subscription = new Subscription();
 
@@ -19,14 +19,15 @@ export class PluckComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     fromEvent(this.input.nativeElement, 'input')
-    .pipe(
-      pluck('target', 'value'),
-      debounceTime(1000),
-      distinctUntilChanged()
-    )
-    .subscribe(
-      (data: string) => this.output = data
-    );
+      .pipe(
+        pluck('target', 'value'),
+        debounceTime(500),
+        distinctUntilChanged()
+      )
+      .subscribe({
+        next: (data: string) => this.output = data
+      });
+    // (event: Event) => console.log((event.target as HTMLInputElement).value)
   }
 
   ngOnDestroy(): void {

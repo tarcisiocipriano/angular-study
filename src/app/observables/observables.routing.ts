@@ -6,8 +6,8 @@ import { MapThrottletimeComponent } from './samples/map-throttletime/map-throttl
 import { SubjectComponent } from './samples/subject/subject.component';
 import { FilterComponent } from './samples/filter/filter.component';
 import { DebouncetimeComponent } from './samples/debouncetime/debouncetime.component';
-import { ScanReduceComponent } from './samples/scan-reduce/scan-reduce.component';
 import { PluckComponent } from './samples/pluck/pluck.component';
+import { ScanReduceComponent } from './samples/scan-reduce/scan-reduce.component';
 import { MergemapComponent } from './samples/mergemap/mergemap.component';
 import { SwitchmapComponent } from './samples/switchmap/switchmap.component';
 import { BehaviorsubjectComponent } from './samples/behaviorsubject/behaviorsubject.component';
@@ -24,8 +24,8 @@ const routes: Routes = [
       { path: 'map-throttletime', component: MapThrottletimeComponent },
       { path: 'filter', component: FilterComponent },
       { path: 'debouncetime', component: DebouncetimeComponent },
-      { path: 'scan-reduce', component: ScanReduceComponent },
       { path: 'pluck', component: PluckComponent },
+      { path: 'scan-reduce', component: ScanReduceComponent },
       { path: 'mergemap', component: MergemapComponent },
       { path: 'switchmap', component: SwitchmapComponent },
       { path: 'behaviorsubject', component: BehaviorsubjectComponent }
