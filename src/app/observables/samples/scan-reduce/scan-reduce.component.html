@@ -1,0 +1,34 @@
+<div class="jumbotron py-3">
+  <p class="lead">Here a the scan and reduce operators calculate the values.</p>
+
+  <div class="card mb-3 bg-dark text-white">
+    <div class="card-body"><pre class="text-white m-0">
+      observable = of(1, 2, 3, 4, 5);
+
+      ngOnInit() {{'{'}}
+        this.observable
+          .pipe(
+            reduce((total, current) => total + current, 0)
+          )
+          .subscribe({{'{'}}
+            next: value => this.reduce = value
+          {{'}'}});
+
+        this.observable
+          .pipe(
+            scan((total, current) => total + current, 0
+          )
+          .subscribe({{'{'}}
+            next: value => this.scan.push(value)
+          {{'}'}});
+      {{'}'}}</pre>
+    </div>
+  </div>
+
+  <p>of() create a observable sequence.</p>
+  <p>reduce() applies an accumulator function over the source Observable, and returns the accumulated result when the source completes.</p>
+  <p>scan() applies an accumulator function over the source Observable, and returns each intermediate result.</p>
+</div>
+
+<p>Reduce: {{ reduce }}</p>
+<p>Scan: <span *ngFor="let value of scan">{{ value }} | </span></p>

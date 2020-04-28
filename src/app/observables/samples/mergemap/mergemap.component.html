@@ -1,0 +1,40 @@
+<div class="jumbotron py-3">
+  <p class="lead">Here a mergeMap operator combines 2 observables.</p>
+
+  <div class="card mb-3 bg-dark text-white">
+    <div class="card-body"><pre class="text-white m-0">
+      @ViewChild('input1', {{'{'}} static: true {{'}'}}) input1: ElementRef;
+      @ViewChild('input2', {{'{'}} static: true {{'}'}}) input2: ElementRef;
+
+      ngOnInit() {{'{'}}
+        const obs1 = fromEvent(this.input1.nativeElement, 'input')
+          .pipe(pluck('target', 'value'));
+        const obs2 = fromEvent(this.input2.nativeElement, 'input')
+          .pipe(pluck('target', 'value'));
+
+        this.subscription = obs1.pipe(mergeMap(value1 => {{'{'}}
+          return obs2.pipe(map(value2 => {{'{'}}
+            return `${{'{'}}value1{{'}'}} ${{'{'}}value2{{'}'}}`;
+          {{'}'}}));
+        {{'}'}})
+        ).subscribe({{'{'}}
+          next: combinedValue => this.output = combinedValue
+        {{'}'}});
+      {{'}'}}</pre>
+    </div>
+  </div>
+
+  <p>mergeMap() Projects each source value to an Observable which is merged in the output Observable.</p>
+</div>
+
+<div class="form-row">
+  <div class="col">
+    <label for="example1">Type something</label>
+    <input class="form-control" id="example1" placeholder="The first thing" type="text" #input1>
+  </div>
+  <div class="col">
+    <label for="example2">Type something</label>
+    <input class="form-control" id="example2" placeholder="Now, the second" type="text" #input2>
+  </div>
+</div>
+<p>{{ output }}</p>

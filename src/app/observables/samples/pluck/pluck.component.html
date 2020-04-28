@@ -1,0 +1,29 @@
+<div class="jumbotron py-3">
+  <p class="lead">Here a fromEvent observable emit events when the input is inputed.</p>
+
+  <div class="card mb-3 bg-dark text-white">
+    <div class="card-body"><pre class="text-white m-0">
+      @ViewChild('input', {{'{'}} static: true {{'}'}}) input: ElementRef;
+
+      ngOnInit() {{'{'}}
+        fromEvent(this.input.nativeElement, 'input')
+          .pipe(
+            pluck('target', 'value'),
+            debounceTime(500),
+            distinctUntilChanged()
+          )
+          .subscribe({{'{'}}
+            next: (data: string) => this.output = data
+          {{'}'}});
+      {{'}'}}</pre>
+    </div>
+  </div>
+
+  <p>pluck() extracts a property from the object.</p>
+</div>
+
+<div class="form-group">
+  <label for="example">Type something</label>
+  <input class="form-control" id="example" placeholder="Wait to copy and paste, but not the same thing!" type="text" #input>
+</div>
+<p>{{ output }}</p>

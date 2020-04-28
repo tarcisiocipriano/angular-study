@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { RoutesModule } from './routes/routes.module';
 import { FormModule } from './form/form.module';
 import { HttpModule } from './http/http.module';
+import { ObservablesModule } from './observables/observables.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpModule } from './http/http.module';
     AppRoutingModule,
     RoutesModule,
     FormModule,
-    HttpModule
+    HttpModule,
+    ObservablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
