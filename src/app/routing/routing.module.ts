@@ -14,7 +14,7 @@ import { RoutingRoutingModule } from './routing.routing';
 import { ServerResolver } from './servers/server/server-resolver.service';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
-import { canDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
+import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +31,6 @@ import { canDeactivateGuard } from './servers/edit-server/can-deactivate-guard.s
     FormsModule,
     RoutingRoutingModule
   ],
-  providers: [ServersService, ServerResolver, AuthService, AuthGuard, canDeactivateGuard]
+  providers: [ServersService, ServerResolver, AuthService, AuthGuard, CanDeactivateGuard]
 })
 export class RoutingModule { }

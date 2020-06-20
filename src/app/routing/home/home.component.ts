@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -20,12 +19,8 @@ export class HomeComponent {
     this.router.navigate(['/servers', id, 'edit'], { queryParams: { allowEdit: '1' }, fragment: 'loading' });
   }
 
-  onLogin() {
-    this.authService.login();
-  }
-
-  onLogout() {
-    this.authService.logout();
+  toggleAuthMode() {
+    this.authService.loggedIn ? this.authService.logout() : this.authService.login();
   }
 
 }

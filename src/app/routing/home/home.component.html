@@ -1,7 +1,12 @@
 <div class="row">
-  <div class="col-3">
-    <div class="alert" [ngClass]="{'alert-success': authService.loggedIn, 'alert-warning': !authService.loggedIn}" role="alert">
-      You are currently <span>{{ authService.loggedIn ? 'logged in' : 'loggend out' }}</span>
+  <div class="col-6 d-flex justify-content-between">
+    <div class="alert d-inline-block" [ngClass]="{'alert-success': authService.loggedIn, 'alert-warning': !authService.loggedIn}" role="alert">
+      You are currently <span>{{ authService.loggedIn ? 'logged in' : 'logged out' }}</span>
+    </div>
+    <div class="mt-1">
+      <button (click)="toggleAuthMode()"
+        class="btn ml-2"
+        [ngClass]="{'btn-outline-primary': !authService.loggedIn, 'btn-outline-danger': authService.loggedIn}">{{ !this.authService.loggedIn ? 'Login' : 'Logout' }}</button>
     </div>
   </div>
 </div>
@@ -18,12 +23,5 @@
         </p>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-3">
-    <button class="btn btn-primary" (click)="onLogin()">Login</button>
-    <button class="btn btn-secondary ml-2" (click)="onLogout()">Logout</button>
   </div>
 </div>
