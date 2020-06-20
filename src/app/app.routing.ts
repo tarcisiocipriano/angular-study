@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 const routes: Routes = [
   {
     path: '', redirectTo: '/routes/home',
-    pathMatch: 'full' },
+    pathMatch: 'full'
+  },
   {
     path: 'routes',
-    loadChildren: () => import('./routes/routes.module').then(m => m.RoutesModule)
+    loadChildren: () => import('./routing/routing.module').then(m => m.RoutingModule)
   },
   {
     path: 'form',
@@ -21,7 +22,9 @@ const routes: Routes = [
   {
     path: 'observables',
     loadChildren: () => import('./observables/observables.module').then(m => m.ObservablesModule)
-  }
+  },
+  { path: 'not-found', component: ErrorPageComponent, data: { message: 'Page not found!' } },
+  { path: '**', redirectTo: '/not-found' }
 ];
 
 @NgModule({

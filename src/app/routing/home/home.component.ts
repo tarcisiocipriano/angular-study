@@ -12,7 +12,7 @@ export class HomeComponent {
 
   constructor(
     private router: Router,
-    private authService: AuthService
+    protected authService: AuthService
   ) { }
 
   onLoadServer(id: number) {

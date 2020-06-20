@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { ServersService } from './servers.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-servers',
@@ -14,7 +15,8 @@ export class ServersComponent implements OnInit {
   constructor(
     private serversService: ServersService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    protected authService: AuthService
   ) { }
 
   ngOnInit() {

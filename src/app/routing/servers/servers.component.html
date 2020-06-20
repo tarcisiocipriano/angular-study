@@ -1,0 +1,19 @@
+<div class="row" *ngIf="!authService.loggedIn">
+  <div class="col-6">
+    <div class="alert alert-danger" role="alert">
+      You are logged out, so 'canActivateChild' is protecting the servers.
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <div class="list-group">
+      <a class="list-group-item list-group-item-action" style="cursor: pointer" *ngFor="let server of servers"
+        (click)="onServer(server.id)">{{ server.name }}
+      </a>
+    </div>
+  </div>
+  <div class="col-6">
+    <router-outlet></router-outlet>
+  </div>
+</div>
